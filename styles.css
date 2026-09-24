@@ -1,0 +1,81 @@
+body{margin:0;font-family:Manrope,system-ui,sans-serif;background:#ffffff;color:#0B2A26}
+a{color:#06302B}a:hover{color:#0B4A42}
+h1,h2,h3{font-family:Sora,Manrope,sans-serif}
+details summary{list-style:none;cursor:pointer}
+details summary::-webkit-details-marker{display:none}
+details[open] .plus{transform:rotate(45deg)}
+input,select{font:inherit}
+
+/* ===== Animações (referência: Healix) ===== */
+@keyframes jrArrow{0%{transform:none;opacity:1}45%{transform:translateX(120%);opacity:0}46%{transform:translateX(-120%);opacity:0}100%{transform:none;opacity:1}}
+@keyframes jrFloat{0%,100%{translate:0 0}50%{translate:0 -10px}}
+@keyframes jrFaq{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: no-preference){
+.anim-on [data-rv]{opacity:0;transition:opacity 1s cubic-bezier(.165,.84,.44,1),transform 1s cubic-bezier(.165,.84,.44,1),translate .35s ease,box-shadow .35s ease;transition-delay:calc(var(--rv-d,0) * 1s)}
+.anim-on [data-rv="up"]{transform:translate3d(0,100px,0)}
+.anim-on [data-rv="right"]{transform:translate3d(100px,0,0)}
+.anim-on [data-rv="down"]{transform:translate3d(0,-24px,0)}
+.anim-on [data-rv="pop"]{transform:translate3d(0,24px,0) scale(.92)}
+.anim-on [data-rv].rv-in{opacity:1;transform:none}
+.anim-on [data-rv].rv-done{transition-delay:0s}
+[data-rv-d="1"]{--rv-d:.1}[data-rv-d="2"]{--rv-d:.2}[data-rv-d="3"]{--rv-d:.3}[data-rv-d="4"]{--rv-d:.45}[data-rv-d="5"]{--rv-d:.6}[data-rv-d="6"]{--rv-d:.75}
+[data-card]:hover{translate:0 -6px;box-shadow:0 18px 40px rgba(6,48,43,.12)}
+[data-float]{animation:jrFloat 5s ease-in-out infinite}
+[data-float="1"]{animation-delay:-1.7s}[data-float="2"]{animation-delay:-3.4s}
+a[style*="border-radius: 999px"]{transition:translate .3s ease,filter .3s ease}
+a[style*="border-radius: 999px"]:hover{translate:0 -2px}
+a > span[style*="background: #06302B"],a > span[style*="background: #ffffff"]{transition:background-color .3s ease}
+a:hover > span[style*="background: #06302B"]{background-color:#0E4A42 !important}
+a:hover > span[style*="background: #ffffff"]{background-color:#F4F4EA !important}
+a:hover > svg:last-child{animation:jrArrow .5s cubic-bezier(.65,0,.35,1)}
+nav a{transition:color .2s ease}nav a:hover{color:#2F7A1F !important}
+
+
+details[open] > p{animation:jrFaq .45s cubic-bezier(.165,.84,.44,1)}
+details summary{transition:color .2s ease}details summary:hover{color:#2F7A1F !important}
+}
+@keyframes jrMarquee{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+@media (prefers-reduced-motion: no-preference){.jr-marquee{animation:jrMarquee 32s linear infinite}}
+#como-trabalho [data-card],#como-trabalho [data-card]:hover{translate:none !important;box-shadow:none !important}
+#como-funciona [data-card],#como-funciona [data-card]:hover{translate:none !important;box-shadow:none !important}
+.jr-hero-bg{background-image:url(assets/bg_hero.webp) !important;background-size:cover !important;background-position:center center !important;background-repeat:no-repeat !important}
+.jr-desk .jr-i-conversa{background-color:#DDE3D9;background-image:url(assets/conversa.webp) !important;background-size:cover !important;background-position:center 35% !important;background-repeat:no-repeat !important}
+.jr-desk .jr-i-avaliacao{background-color:#DDE3D9;background-image:url(assets/avaliacao.webp) !important;background-size:cover !important;background-position:center !important;background-repeat:no-repeat !important}
+.jr-desk .jr-i-plano{background-color:#DDE3D9;background-image:url(assets/plano.webp) !important;background-size:cover !important;background-position:center !important;background-repeat:no-repeat !important}
+.jr-desk .jr-i-mensagens{background-color:#DDE3D9;background-image:url(assets/mensagens.webp) !important;background-size:cover !important;background-position:center !important;background-repeat:no-repeat !important}
+.jr-desk .jr-i-consulta{background-color:#DDE3D9;background-image:url(assets/consulta.webp) !important;background-size:260% auto !important;background-position:100% 100% !important;background-repeat:no-repeat !important}
+.jr-desk .jr-i-prato{background-color:#DDE3D9;background-image:url(assets/prato.webp) !important;background-size:cover !important;background-position:center !important;background-repeat:no-repeat !important}
+.jr-desk .jr-i-retrato{background-color:#DDE3D9;background-image:url(assets/bg_hero.webp) !important;background-size:cover !important;background-position:93% top !important;background-repeat:no-repeat !important}
+.jr-desk .jr-i-casual{background-color:#DDE3D9;background-image:url(assets/bg_hero.webp) !important;background-size:170% auto !important;background-position:100% 15% !important;background-repeat:no-repeat !important}
+.jr-desk .jr-i-avatar{background-color:#DDE3D9;background-image:url(assets/bg_hero.webp) !important;background-size:260px auto !important;background-position:-162px -2px !important;background-repeat:no-repeat !important}
+@media (prefers-reduced-motion: no-preference){[class^="jr-i-"]:not(.jr-i-avatar){transition:scale .6s cubic-bezier(.165,.84,.44,1)}[class^="jr-i-"]:not(.jr-i-avatar):hover{scale:1.02}}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}details.jr-faq-anim{overflow:hidden}details[open] > p{animation-duration:.6s !important}}
+h1,h2,h3,p,summary{text-wrap:pretty}
+.jr-hero-mbg{background-color:#E8E9EC !important;background-image:url(assets/bg_mobile.webp) !important;background-size:100% auto !important;background-position:center 40px !important;background-repeat:no-repeat !important}
+.jr-mob .jr-i-conversa{background-color:#DDE3D9;background-image:url(assets/conversa.webp) !important;background-size:cover !important;background-position:center 35% !important;background-repeat:no-repeat !important}
+.jr-mob .jr-i-avaliacao{background-color:#DDE3D9;background-image:url(assets/avaliacao.webp) !important;background-size:cover !important;background-position:center !important;background-repeat:no-repeat !important}
+.jr-mob .jr-i-plano{background-color:#DDE3D9;background-image:url(assets/plano.webp) !important;background-size:cover !important;background-position:center !important;background-repeat:no-repeat !important}
+.jr-mob .jr-i-mensagens{background-color:#DDE3D9;background-image:url(assets/mensagens.webp) !important;background-size:cover !important;background-position:center !important;background-repeat:no-repeat !important}
+.jr-mob .jr-i-consulta{background-color:#DDE3D9;background-image:url(assets/consulta.webp) !important;background-size:260% auto !important;background-position:100% 100% !important;background-repeat:no-repeat !important}
+.jr-mob .jr-i-prato{background-color:#DDE3D9;background-image:url(assets/prato.webp) !important;background-size:cover !important;background-position:center !important;background-repeat:no-repeat !important}
+.jr-mob .jr-i-retrato{background-color:#DDE3D9;background-image:url(assets/bg_hero.webp) !important;background-size:cover !important;background-position:96% top !important;background-repeat:no-repeat !important}
+.jr-mob .jr-i-casual{background-color:#DDE3D9;background-image:url(assets/bg_hero.webp) !important;background-size:170% auto !important;background-position:100% 15% !important;background-repeat:no-repeat !important}
+.jr-mob .jr-i-avatar{background-color:#DDE3D9;background-image:url(assets/bg_hero.webp) !important;background-size:240px auto !important;background-position:-150px -2px !important;background-repeat:no-repeat !important}
+#m-como-trabalho [data-card],#m-como-trabalho [data-card]:hover{translate:none !important;box-shadow:none !important}
+#m-como-funciona [data-card],#m-como-funciona [data-card]:hover{translate:none !important;box-shadow:none !important}
+
+/* ===== Responsivo: desktop (>=900px) e mobile (<900px) ===== */
+html,body{background:#ffffff}
+.jr-desk{width:1440px;margin:0 auto;zoom:var(--zd,1)}
+.jr-mob{width:390px;margin:0 auto;zoom:var(--zm,1)}
+@media (min-width:900px){.jr-mob{display:none !important}}
+@media (max-width:899px){.jr-desk{display:none !important}}
+[data-anim-root]{height:auto !important}
+/* Lenis controla a rolagem suave quando ativo */
+html.lenis{scroll-behavior:auto !important}
+/* Barra de rolagem na paleta do projeto: verde-limão sobre verde-escuro */
+html{scrollbar-color:#B7F06A #06302B}
+::-webkit-scrollbar{width:12px;height:12px}
+::-webkit-scrollbar-track{background:#06302B}
+::-webkit-scrollbar-thumb{background:#B7F06A;border-radius:999px;border:3px solid #06302B}
+::-webkit-scrollbar-thumb:hover{background:#CDF594}
